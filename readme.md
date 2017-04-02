@@ -1,8 +1,8 @@
 **Instructions to use this script**
 
-$ chmod +x nesdo.sh
+$ chmod +x vietcli.sh
 
-$ sudo mv /usr/local/sbin/nesdo
+$ sudo mv /usr/local/sbin/vietcli
 
 $ sudo nesdo create example.local
 
