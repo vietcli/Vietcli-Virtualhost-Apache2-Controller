@@ -58,13 +58,14 @@ if [ "$action" == 'create' ]
 			mkdir $rootDir
 			### give permission to root dir
 			chmod 755 $rootDir
+			chown $USER:www-data $rootDir
 			### write test file in the new domain dir
 			if ! echo "<?php echo phpinfo(); ?>" > $rootDir/phpinfo.php			
 			then
 				echo $"ERROR: Not able to write in file $rootDir/phpinfo.php. Please check permissions"
 				exit;
 			else
-				echo $"Added content to $rootDir/phpinfo.php"
+				echo $"Added content to $rootDir/vietcli.php"
 			fi
 			### create ssl certificate
 			openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj "/C=US/ST=Denial/L=Springfield/O=Dis/CN=$domain" -keyout /etc/ssl/private/ssl-cert-$domain.key -out /etc/ssl/certs/ssl-cert-$domain.pem			
